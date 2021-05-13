@@ -29,6 +29,11 @@ jobs:
         sudo npm install serverless-offline --save-dev
         sudo npm install --save serverless-python-requirements
 
+    - name: Install python dependencies
+      run: |
+        sudo pip install numpy
+        sudo pip install pandas
+
     - name: Serverless deploy
       uses: serverless/github-action@master
       with:
