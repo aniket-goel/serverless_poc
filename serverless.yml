@@ -1,0 +1,41 @@
+service: serverless-poc-python
+
+provider:
+  stackName: serverless-python
+  name: aws
+  runtime: python3.8
+  region: ap-south-1
+  memorySize: 128
+  stage: dev
+  timeout: 60
+  versionFunctions: false
+  iamRoleStatements:
+    - Effect: "Allow"
+      Resource:
+        - "*"
+      Action:
+        - "*"
+  stackTags:
+    Project: serverless-poc
+    Environment: dev
+    Serverless: true
+
+plugins:
+  - serverless-offline # You can run lambda in your local to make dev cycle faster, sls offline
+  - serverless-python-requirements
+
+# Managing variables
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+# Lambdas
+functions:
+  simple-numpy-test-serverless:
+    name: dev-ap-south-1-simple-numpy-test-serverless
+    description: For serverless poc with python requirements.
+    handler: src/handler.hello
+    tags:
+      Project: poc
+      Environment: dev
+      Serverless: true
