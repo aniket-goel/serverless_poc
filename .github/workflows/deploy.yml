@@ -7,10 +7,13 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-      matrix:
-        python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
 
     - name: Install Node.js 14.15
       uses: actions/setup-node@v2
