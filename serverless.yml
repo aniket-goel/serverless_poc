@@ -3,6 +3,7 @@ service: serverless-poc-python
 provider:
   stackName: serverless-python
   name: aws
+  runtime: python3.9
   region: ap-south-1
   memorySize: 128
   stage: dev
