@@ -2,7 +2,7 @@ name: Deploy
 on: [push]
 
 env:
-  AWS_REGION: ap-south-1
+  AWS_REGION: eu-west-1
 
 jobs:
   deploy:

@@ -4,7 +4,7 @@ provider:
   stackName: serverless-python
   name: aws
   runtime: python3.8
-  region: ap-south-1
+  region: eu-west-1
   memorySize: 128
   stage: dev
   timeout: 60
@@ -32,7 +32,7 @@ custom:
 # Lambdas
 functions:
   simple-numpy-test-serverless:
-    name: dev-ap-south-1-simple-numpy-test-serverless
+    name: dev-eu-west-1-simple-numpy-test-serverless
     description: For serverless poc with python requirements.
     handler: src/handler.hello
     tags:
