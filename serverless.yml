@@ -27,6 +27,7 @@ plugins:
 # Managing variables
 custom:
   pythonRequirements:
+    pythonBin: python3
     dockerizePip: non-linux
 
 # Lambdas
